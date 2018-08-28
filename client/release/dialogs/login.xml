@@ -1,0 +1,813 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<dialogs>
+	<!-- Toplevel Login Dialog -->
+	<dialog id="LoginDialog" name="LoginDialog" closable="0" movable="0" module="dialogs.LoginDialog">
+		<bounds x="0" y="0" width="640" height="480" />
+		<children>
+			<!-- Overall Background -->
+			<tiledgump gump="0xe14">
+				<bounds x="0" y="0" width="640" height="480" />
+			</tiledgump>
+
+			<!-- Big border -->
+			<gumpimage gump="0x157c">
+				<position x="0" y="0" />
+			</gumpimage>
+
+			<!-- Uo Banner -->
+			<gumpimage gump="0x15a0">
+				<position x="0" y="4" />
+			</gumpimage>
+			
+			<!--
+				This sub-container is responsible for the account login gump.
+			-->
+			<container name="AccountLoginContainer" visible="false">
+				<bounds x="0" y="0" width="640" height="480" />
+				<children>
+					<!-- Background for account+password input fields and castle -->
+					<bordergump gump="0x13be">
+						<bounds x="128" y="288" width="451" height="157" />
+					</bordergump>					
+					
+					<!-- castle image -->
+					<gumpimage gump="0x58a">
+						<position x="286" y="45" />
+					</gumpimage>
+						
+					<!-- Texts -->
+					<asciilabel font="2" hue="0x34f">
+						<text>Log in to Ultima Online</text>
+						<position x="263" y="305" />
+					</asciilabel>
+
+					<asciilabel name="ClientVersionLabel" font="9" hue="0x34f" hueall="true">
+						<position x="203" y="422" />
+					</asciilabel>		
+					
+					<asciilabel font="6" hue="0x481" hueall="true">
+						<text>© 2005 Wolfpack Development Team</text>
+						<position x="203" y="456" />
+					</asciilabel>
+					
+					<asciilabel font="2" hue="0x34f">
+						<text>Account Name</text>
+						<position x="183" y="345" />
+					</asciilabel>
+										
+					<asciilabel font="2" hue="0x34f">
+						<text>Password</text>
+						<position x="183" y="386" />
+					</asciilabel>
+				
+					<!-- Input fields -->					
+					<textfield name="AccountTextfield" font="5" hue="0x34f" background="3000" hueall="true" hoverhue="0x2b8" focushue="0x23" maxlength="16" unicode="false">
+						<bounds x="328" y="343" width="210" height="30" />
+					</textfield>
+					
+					<textfield name="PasswordTextfield" font="5" hue="0x34f" background="3000" hueall="true" hoverhue="0x2b8" focushue="0x23" maxlength="16" unicode="false" password="true">
+						<bounds x="328" y="383" width="210" height="30" />
+					</textfield>
+				</children>
+			</container>
+			
+			<!--
+				This sub-container is responsible for the shard selection
+			-->
+			<container name="ShardSelectionContainer" visible="false">
+				<bounds x="0" y="0" width="640" height="480" />
+				<children>
+					<label font="1" hue="0x3e4" border="false" text="Select which shard to play on:">
+						<position x="158" y="72" />
+					</label>
+					
+					<label font="1" hue="0x3e4" border="false" text="Latency:">
+						<position x="403" y="72" />
+					</label>
+					
+					<label font="1" hue="0x3e4" border="false" text="Packet Loss:">
+						<position x="473" y="72" />
+					</label>
+					
+					<!-- the backround of the clickable world -->
+					<gumpimage gump="0x589">
+						<position x="150" y="390" />
+					</gumpimage>
+					
+					<!-- This label is filled with the name of the last selected shard -->
+					<asciilabel name="LastShardLabel" font="9" hue="0x481">
+						<position x="243" y="415" />
+					</asciilabel>
+					
+					<!-- This button selects the last shard. It's the form of a globe -->
+					<imagebutton name="LastShardButton" unpressed="0x15e8" pressed="0x15ea" hover="0x15e9">
+						<position x="160" y="400" />
+					</imagebutton>
+					
+					<!-- This container will be the scrollable shard list -->
+					<container name="ScrollableShardList">
+						<bounds x="150" y="90" width="400" height="304" />
+						<children>
+							<!-- This is the background of the scrollable box -->
+							<bordergump gump="0xdac">
+								<size width="380" height="271" />
+							</bordergump>
+
+							<!--
+							 Note: The Scrollbar will automatically be added and set up.
+							-->
+							
+							<!-- This container will be filled with the shard entries -->
+							<container name="ShardListContainer">
+								<bounds x="0" y="10" width="400" height="284" />
+							</container>
+						</children>
+					</container>					
+				</children>
+			</container>
+			
+			<!-- This is the status dialog used by the login gump -->			
+			<container name="StatusDialogContainer" visible="false" movable="true">
+				<bounds x="195" y="115" width="250" height="250" />
+				<children>
+					<bordergump gump="9200">
+						<bounds x="0" y="0" width="250" height="250" />
+					</bordergump>
+					<bordergump gump="3500">
+						<bounds x="10" y="10" width="230" height="208" />
+					</bordergump>
+					<label name="StatusLabel" text="" hue="1" border="false" textalign="center" autosize="0">
+						<bounds x="25" y="25" width="200"/>
+					</label>
+					<imagebutton name="StatusOkButton" unpressed="4023" pressed="4025" hover="4024">
+						<position x="110" y="223" />
+					</imagebutton>
+					<imagebutton name="StatusCancelButton" unpressed="4017" pressed="4019" hover="4018">
+						<position x="110" y="223" />
+					</imagebutton>					
+				</children>
+			</container>
+
+			<!-- This container contains the character select page -->
+			<container name="CharacterSelectContainer" visible="false">
+				<!-- You have to keep the width/height consistent or else the character name labels will be misplaced -->
+				<bounds x="160" y="70" width="408" height="388" />
+				
+				<children>
+					<!-- Character Select Background -->
+					<bordergump gump="0xa28" align="client" />
+					
+					<!-- Label at the top of the page -->
+					<asciilabel text="Character Selection" hue="0x34f" font="2" textalign="center" autosize="false">
+						<bounds x="0" y="20" width="408" height="200" />
+					</asciilabel>			
+	
+					<!-- New Character Button -->
+					<imagebutton name="NewCharacterButton" unpressed="0x159d" pressed="0x159f" hover="0x159e">
+						<position x="64" y="327" />
+					</imagebutton>
+					
+					<!-- Delete Character Button -->
+					<imagebutton name="DeleteCharacterButton" unpressed="0x159a" pressed="0x159c" hover="0x159b">
+						<position x="282" y="327" />
+					</imagebutton>
+					
+					<!-- Backgrounds for the six character slots -->
+					<bordergump name="CharacterNameBackground0" gump="3000">
+						<bounds x="64" y="80" width="287" height="31" />
+					</bordergump>
+					<bordergump name="CharacterNameBackground1" gump="3000">
+						<bounds x="64" y="120" width="287" height="31" />
+					</bordergump>
+					<bordergump name="CharacterNameBackground2" gump="3000">
+						<bounds x="64" y="160" width="287" height="31" />
+					</bordergump>
+					<bordergump name="CharacterNameBackground3" gump="3000">
+						<bounds x="64" y="200" width="287" height="31" />
+					</bordergump>
+					<bordergump name="CharacterNameBackground4" gump="3000">
+						<bounds x="64" y="240" width="287" height="31" />
+					</bordergump>
+					<bordergump name="CharacterNameBackground5" gump="3000">
+						<bounds x="64" y="280" width="287" height="31" />
+					</bordergump>
+					
+					<!-- The character names will be added automatically to the end of this list by the login dialog -->
+				</children>
+			</container>
+			
+			<!-- This is the confirmation dialog for character deletion -->
+			<container name="ConfirmDeleteContainer" visible="false">
+				<bounds x="0" y="0" width="640" height="480" />
+				<children>
+					<!-- Dialog background -->
+					<bordergump gump="0xa28">
+						<bounds x="166" y="96" width="308" height="188" />
+					</bordergump>
+					
+					<asciilabel name="ConfirmationLabel" text="Status" font="2" hue="0x34f" textalign="center" autosize="false">
+						<bounds x="166" y="150" width="308" height="200" />
+					</asciilabel>
+					
+					<!-- Cancel Button -->
+					<imagebutton name="DeleteCancelButton" unpressed="0x47e" pressed="0x480" hover="0x47f">
+						<position x="356" y="225" />
+					</imagebutton>
+					
+					<!-- Ok Button -->
+					<imagebutton name="DeleteOkButton" unpressed="0x481" pressed="0x483" hover="0x482">
+						<position x="256" y="225" />
+					</imagebutton>
+				</children>								
+			</container>
+
+			<!-- This container contains the character creation dialogs -->
+			<container name="CharacterCreationContainer" visible="true">
+				<bounds x="0" y="0" width="640" height="480" />
+			</container>			
+
+			<!-- Quit Button -->
+			<imagebutton name="QuitButton" unpressed="0x1589" pressed="0x158B" hover="0x158A">
+				<position x="555" y="4" />
+			</imagebutton>
+
+			<!-- MyUO Button -->
+			<imagebutton name="MyUOButton" unpressed="0x158f" pressed="0x1591" hover="0x1590">
+				<position x="14" y="146" />
+			</imagebutton>
+
+			<!-- Account Button -->
+			<imagebutton name="AccountButton" unpressed="0x1592" pressed="0x1594" hover="0x1593">
+				<position x="14" y="205" />
+			</imagebutton>
+			
+			<!-- Movie Button -->
+			<imagebutton name="MovieButton" unpressed="0x1586" pressed="0x1588" hover="0x1587">
+				<position x="14" y="306" />
+			</imagebutton>
+			
+			<!-- Credits Button -->
+			<imagebutton name="CreditsButton" unpressed="0x1583" pressed="0x1585" hover="0x1584">
+				<position x="14" y="330" />
+			</imagebutton>
+			
+			<!-- Help Button -->
+			<imagebutton name="HelpButton" unpressed="0x1595" pressed="0x1597" hover="0x1596">
+				<position x="14" y="354" />
+			</imagebutton>
+			
+			<!-- ESBR Teen Logo (Only visible in US versions) -->
+			<gumpimage gump="0x2335" visible="false">
+				<position x="50" y="383" />
+			</gumpimage>				
+
+			<!-- Back Button -->
+			<imagebutton name="BackButton" unpressed="0x15a1" pressed="0x15a3" hover="0x15a2">
+				<position x="586" y="445" />
+			</imagebutton>
+			
+			<!-- Next Button -->
+			<imagebutton name="NextButton" unpressed="0x15a4" pressed="0x15a6" hover="0x15a5">
+				<position x="610" y="445" />
+			</imagebutton>						
+		</children>
+	</dialog>
+	
+	<!-- Character creation subwindow -->
+	<dialog id="CharacterCreation1" name="CharacterCreation1" closable="0" movable="0" module="dialogs.CharacterCreation" visible="false">
+		<bounds x="0" y="0" width="640" height="480" />
+		<children>
+			<bordergump gump="2600">
+				<bounds x="100" y="80" width="470" height="372" />
+			</bordergump>
+			
+			<gumpimage gump="1419">
+				<position x="213" y="57" />
+			</gumpimage>
+			
+			<gumpimage gump="1417">
+				<position x="290" y="44" />
+			</gumpimage>
+			
+			<gumpimage gump="5546">
+				<position x="299" y="53" />
+			</gumpimage>
+			
+			<label name="TitleLabel" font="0" localized="3000326" hue="1" bordercolor="0xC0B088" emboss="true">
+				<position x="135" y="125"/>
+			</label>
+			
+			<!-- Back Button -->
+			<imagebutton name="BackButton" unpressed="0x15a1" pressed="0x15a3" hover="0x15a2">
+				<position x="586" y="445" />
+			</imagebutton>
+		</children>
+	</dialog>
+	
+	<!-- Template for one of the templates on the template selection screen -->
+	<dialog id="CharacterTemplate" closable="0" movable="0">
+		<size width="195" height="67" />
+		<children>
+			<bordergump gump="3000">
+				<bounds x="10" y="13" width="175" height="34" />
+			</bordergump>	
+			
+			<imagebutton name="TemplateButton" unpressed="5505" pressed="5506" hover="5506">
+				<position x="135" y="0" />
+			</imagebutton>
+			
+			<label name="TemplateLabel" font="1" localized="3000448" hue="1" border="false">
+				<position x="17" y="20"/>
+			</label>			
+		</children>
+	</dialog>
+	
+	<!-- Advanced character profesion setup -->
+	<dialog id="CharacterCreation2" name="CharacterCreation2" closable="0" movable="0" module="dialogs.CharacterCreation" visible="false">
+		<bounds x="0" y="0" width="640" height="480" />
+		<children>
+			<bordergump gump="2600">
+				<bounds x="100" y="80" width="470" height="372" />
+			</bordergump>
+			
+			<gumpimage gump="1419">
+				<position x="213" y="57" />
+			</gumpimage>
+			
+			<gumpimage gump="1417">
+				<position x="290" y="44" />
+			</gumpimage>
+			
+			<gumpimage gump="5546">
+				<position x="299" y="53" />
+			</gumpimage>
+			
+			<label name="TitleLabel" font="0" localized="3000326" hue="1" bordercolor="0xC0B088" emboss="true">
+				<position x="135" y="125"/>
+			</label>
+		
+			<container>
+				<bounds x="135" y="147" width="400" height="305" />
+				<children>
+					<bordergump gump="9250" hue="795">
+						<bounds x="0" y="0" width="400" height="255" />
+					</bordergump>
+					
+					<!-- Strength: -->
+					<label localized="3000327" hue="1" border="false">
+						<position x="30" y="30"/>
+					</label>
+					<label name="StrengthLabel" text="0" hue="1" border="false" textalign="right" autosize="0">
+						<bounds x="130" y="30" width="45"/>
+					</label>
+					
+					<bordergump gump="9200">
+						<bounds x="30" y="47" width="150" height="22" />
+					</bordergump>					
+					<horizontalscrollbar name="StrengthScroller" background="0" handle="9026">
+						<leftbutton unpressed="9909" pressed="9911" hover="9910" />
+						<rightbutton unpressed="9903" pressed="9905" hover="9904" />
+						<range min="10" max="60" />
+						<bounds x="30" y="48" width="150" />
+					</horizontalscrollbar>
+					
+					<!-- Dexterity -->
+					<label localized="3000328" hue="1" border="false">
+						<position x="30" y="95"/>
+					</label>
+					<label name="DexterityLabel" text="0" hue="1" border="false" textalign="right" autosize="0">
+						<bounds x="130" y="95" width="45"/>
+					</label>
+					
+					<bordergump gump="9200">
+						<bounds x="30" y="112" width="150" height="22" />
+					</bordergump>					
+					<horizontalscrollbar name="DexterityScroller" background="0" handle="9026">
+						<leftbutton unpressed="9909" pressed="9911" hover="9910" />
+						<rightbutton unpressed="9903" pressed="9905" hover="9904" />
+						<range min="10" max="60" />
+						<bounds x="30" y="113" width="150" />
+					</horizontalscrollbar>					
+
+					<!-- Intelligence -->
+					<label localized="3000329" hue="1" border="false">
+						<position x="30" y="160"/>
+					</label>
+					<label name="IntelligenceLabel" text="0" hue="1" border="false" textalign="right" autosize="0">
+						<bounds x="130" y="160" width="45"/>
+					</label>
+
+					<bordergump gump="9200">
+						<bounds x="30" y="177" width="150" height="22" />
+					</bordergump>
+					<horizontalscrollbar name="IntelligenceScroller" background="0" handle="9026">
+						<leftbutton unpressed="9909" pressed="9911" hover="9910" />
+						<rightbutton unpressed="9903" pressed="9905" hover="9904" />
+						<range min="10" max="60" />
+						<bounds x="30" y="178" width="150" />
+					</horizontalscrollbar>
+					
+					<!-- Skill 1 -->
+					<combobox style="1" name="SkillBox1">
+						<bounds x="221" y="30" width="150" height="60" />
+					</combobox>
+					<bordergump gump="9200">
+						<bounds x="221" y="57" width="120" height="22" />
+					</bordergump>
+					<label name="SkillLabel1" text="0" hue="1" border="false" textalign="right" autosize="0">
+						<bounds x="321" y="58" width="45"/>
+					</label>										
+					<horizontalscrollbar name="SkillScroller1" background="0" handle="9026">
+						<leftbutton unpressed="9909" pressed="9911" hover="9910" />
+						<rightbutton unpressed="9903" pressed="9905" hover="9904" />
+						<range min="0" max="50" />
+						<bounds x="221" y="58" width="120" />
+					</horizontalscrollbar>
+					
+					<!-- Skill 2 -->
+					<combobox style="1" name="SkillBox2">
+						<bounds x="221" y="95" width="150" height="60" />
+					</combobox>
+					<bordergump gump="9200">
+						<bounds x="221" y="122" width="120" height="22" />
+					</bordergump>
+					<label name="SkillLabel2" text="0" hue="1" border="false" textalign="right" autosize="0">
+						<bounds x="321" y="123" width="45"/>
+					</label>					
+					<horizontalscrollbar name="SkillScroller2" background="0" handle="9026">
+						<leftbutton unpressed="9909" pressed="9911" hover="9910" />
+						<rightbutton unpressed="9903" pressed="9905" hover="9904" />
+						<range min="0" max="50" />
+						<bounds x="221" y="123" width="120" />
+					</horizontalscrollbar>
+					
+					<!-- Skill 3 -->
+					<combobox style="1" name="SkillBox3">
+						<bounds x="221" y="160" width="150" height="60" />
+					</combobox>										
+					<bordergump gump="9200">
+						<bounds x="221" y="187" width="120" height="22" />
+					</bordergump>
+					<label name="SkillLabel3" text="0" hue="1" border="false" textalign="right" autosize="0">
+						<bounds x="321" y="188" width="45"/>
+					</label>										
+					<horizontalscrollbar name="SkillScroller3" background="0" handle="9026">
+						<leftbutton unpressed="9909" pressed="9911" hover="9910" />
+						<rightbutton unpressed="9903" pressed="9905" hover="9904" />
+						<range min="0" max="50" />
+						<bounds x="221" y="188" width="120" />
+					</horizontalscrollbar>
+					
+					<!--
+					combobox 110008 221 30 150 papercombobox papercombolist
+					hscrollbar 120006 221 58 120 16 hscrollbar
+					numerictextarea 120006 321 58 45 20 512-->
+				</children>
+			</container>
+
+			<imagebutton name="BackButton" unpressed="0x15a1" pressed="0x15a3" hover="0x15a2">
+				<position x="586" y="445" />
+			</imagebutton>
+			<imagebutton name="NextButton" unpressed="5540" pressed="5542" hover="5541">
+				<position x="610" y="445" />
+			</imagebutton>
+		</children>
+	</dialog>
+	
+	<!-- Character Appeareance Setup -->
+	<dialog id="CharacterCreation3" name="CharacterCreation3" closable="0" movable="0" module="dialogs.CharacterCreation" visible="false">
+		<bounds x="0" y="0" width="640" height="480" />
+		<children>
+			<bordergump gump="2600">
+				<bounds x="80" y="80" width="506" height="366" />
+			</bordergump>
+			<gumpimage gump="1419">
+				<position x="145" y="57" />
+			</gumpimage>
+			<gumpimage gump="1417">
+				<position x="222" y="44" />
+			</gumpimage>
+			<gumpimage gump="5546">
+				<position x="231" y="53" />
+			</gumpimage>
+			
+			<label font="0" localized="3000325" hue="1" bordercolor="0xC0B088" emboss="true" textalign="center" autosize="0">
+				<bounds x="80" y="405" width="496" />		
+			</label>
+			
+			<!-- Male/Female Toggle -->
+			<textbutton name="MaleButton" localized="3000118" style="0">
+				<bounds x="120" y="347" width="105" height="25" />
+			</textbutton>			
+			<textbutton name="FemaleButton" localized="3000119" style="0">
+				<bounds x="240" y="347" width="105" height="25" />
+			</textbutton>			
+			
+			<!-- Human/Elf Toggle
+			<textbutton name="MaleButton" localized="1072255" style="0">
+				<bounds x="120" y="342" width="105" height="20" />
+			</textbutton>			
+			<textbutton name="FemaleButton" localized="1072256" style="0">
+				<bounds x="120" y="362" width="105" height="20" />
+			</textbutton>
+			-->
+			
+			<!-- Shirt Color -->
+			<textbutton name="ShirtColorButton" localized="3000440" style="0">
+				<bounds x="120" y="127" width="224" height="30" />
+			</textbutton>
+
+			<!-- Pants Color -->
+			<textbutton name="PantsColorButton" localized="3000441" style="0">
+				<bounds x="120" y="157" width="224" height="30" />
+			</textbutton>
+			
+			<!-- Skin Tone -->
+			<textbutton name="SkinToneButton" localized="3000442" style="0">
+				<bounds x="120" y="187" width="224" height="30" />
+			</textbutton>
+			
+			<!-- Hairstyle -->
+			<combobox style="1" name="HairStyle">
+				<bounds x="120" y="240" width="124" height="60" />
+			</combobox>
+			
+			<!-- Hair Color -->
+			<textbutton name="HairColorButton" localized="3000444" style="0">
+				<bounds x="250" y="237" width="94" height="30" />
+			</textbutton>
+			
+			<!-- Facial Hairstyle -->
+			<combobox style="1" name="FacialHairStyle">
+				<bounds x="120" y="287" width="124" height="60" />
+			</combobox>
+			
+			<!-- Facial Hair Color -->
+			<textbutton name="FacialHairColorButton" localized="3000446" style="0">
+				<bounds x="250" y="284" width="94" height="30" />
+			</textbutton>
+			
+			<!-- Paperdoll background -->						
+			<bordergump gump="9270">
+				<bounds x="355" y="110" width="183" height="280" />
+			</bordergump>
+			<tiledgump gump="0xc8" hue="1">
+				<bounds x="369" y="124" width="155" height="252" />
+			</tiledgump>
+			
+			<!-- Character Name input -->			
+			<textfield name="NameTextfield" font="1" hue="1" background="3000" maxlength="30" unicode="true">
+				<bounds x="370" y="370" width="155" height="26" />
+			</textfield>			
+																		
+			<!-- Paperdoll Stuff -->			
+			<gumpimage name="PaperdollBody" gump="12" partialhue="true">
+				<position x="355" y="110" />
+			</gumpimage>
+			<gumpimage name="PaperdollFeet" gump="0xc530">
+				<position x="355" y="110" />
+			</gumpimage>
+			<gumpimage name="PaperdollLegs" gump="0xc4fe">
+				<position x="355" y="110" />
+			</gumpimage>
+			<gumpimage name="PaperdollTorso" gump="0xc502">
+				<position x="355" y="110" />
+			</gumpimage>
+			<gumpimage name="PaperdollHair" gump="0xc60d">
+				<position x="355" y="110" />
+			</gumpimage>
+			<gumpimage name="PaperdollFacialHair" gump="0xc674">
+				<position x="355" y="110" />
+			</gumpimage>
+			
+			<!-- Color picker -->	
+			<colorpicker name="ClothColorPicker" starthue="2" endhue="0x3e9" rows="10" columns="100" visible="false">
+				<bounds x="127" y="130" width="240" height="250" />
+			</colorpicker>
+			<colorpicker name="SkinColorPicker" starthue="0x3ea" endhue="0x422" rows="8" columns="7" visible="false">
+				<bounds x="127" y="130" width="224" height="250" />
+			</colorpicker>
+			<colorpicker name="HairColorPicker" starthue="0x44e" endhue="0x47d" rows="7" columns="7" visible="false">
+				<bounds x="127" y="130" width="224" height="250" />
+			</colorpicker>
+			
+			<!-- Back Button -->
+			<imagebutton name="BackButton" unpressed="0x15a1" pressed="0x15a3" hover="0x15a2">
+				<position x="586" y="445" />
+			</imagebutton>
+			
+			<!-- Next Button -->
+			<imagebutton name="NextButton" unpressed="0x15a4" pressed="0x15a6" hover="0x15a5">
+				<position x="610" y="445" />
+			</imagebutton>
+		</children>	
+	</dialog>
+
+	<!-- Starting Town Selection -->
+	<dialog id="CharacterCreation4" name="CharacterCreation4" closable="0" movable="0" module="dialogs.CharacterCreation" visible="false">
+		<bounds x="0" y="0" width="640" height="480" />
+		<children>
+			<gumpimage gump="5528">
+				<position x="57" y="49" />
+			</gumpimage>
+					
+			<!-- Select your starting city -->
+			<label font="0" localized="3000331" hue="0x835" bordercolor="0xC0B088" emboss="true" textalign="center" autosize="0">
+				<bounds x="220" y="434" width="200" />		
+			</label>
+			
+			<!-- City info box -->
+			<bordergump gump="3000">
+				<bounds x="452" y="60" width="173" height="367" />
+			</bordergump>
+			
+			<container>			
+				<bounds x="456" y="64" width="148" height="360" />
+				<children>				
+					<label name="CityInfo" font="1" hue="1" bordercolor="0xC0B088" emboss="false" border="false" htmlmode="true" autosize="false">
+						<bounds x="0" y="0" width="148" />
+					</label>
+				</children>			
+			</container>
+			<verticalscrollbar name="CityInfoScroller" background="9204" handle="9026">
+				<bounds x="600" y="64" height="360" />
+				<upbutton unpressed="9900" pressed="9902" hover="9901" />
+				<downbutton unpressed="9906" pressed="9908" hover="9907" />
+				<range min="0" max="1" />				
+			</verticalscrollbar>
+			
+			<!-- Yew -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="129" y="145" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Yew"> <!-- Width: 21 -->
+				<position x="111" y="143" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Yew" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="129" y="145" width="67" />
+			</label>
+			
+			<!-- Minoc -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="268" y="95" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Minoc"> <!-- Width: 21 -->
+				<position x="250" y="93" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Minoc" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="268" y="95" width="67" height="17" />
+			</label>
+						
+			<!-- Britain -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="191" y="200" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Britain"> <!-- Width: 21 -->
+				<position x="173" y="198" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Britain" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="191" y="200" width="67" height="17" />
+			</label>			
+			
+			<!-- Moonglow -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="354" y="162" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Moonglow"> <!-- Width: 21 -->
+				<position x="336" y="160" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Moonglow" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="354" y="162" width="67" height="17" />
+			</label>
+
+			<!-- Trinsic -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="223" y="304" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Trinsic"> <!-- Width: 21 -->
+				<position x="205" y="302" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Trinsic" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="223" y="304" width="67" height="17" />
+			</label>						
+			
+			<!-- Magincia -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="358" y="244" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Magincia"> <!-- Width: 21 -->
+				<position x="340" y="242" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Magincia" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="358" y="244" width="67" height="17" />
+			</label>			
+			
+			<!-- Jhelom -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="182" y="393" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Jhelom"> <!-- Width: 21 -->
+				<position x="164" y="391" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Jhelom" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="182" y="393" width="67" height="17" />
+			</label>			
+			
+			<!-- Skara Brae -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="124" y="239" width="97" height="17" />
+			</bordergump>
+			<radiobutton name="Skara Brae"> <!-- Width: 21 -->
+				<position x="106" y="237" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Skara Brae" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="124" y="239" width="97" height="17" />
+			</label>			
+			
+			<!-- Vesper -->
+			<bordergump hue="505" partialhue="true" gump="3000">
+				<bounds x="295" y="130" width="67" height="17" />
+			</bordergump>
+			<radiobutton name="Vesper"> <!-- Width: 21 -->
+				<position x="277" y="128" />
+				<unchecked hue="505" partialhue="true" gump="9909" />
+				<hover hue="505" partialhue="true" gump="9910" />
+				<pressed hue="505" partialhue="true" gump="9911" />
+				<checked hue="55" partialhue="true" gump="9909" />
+				<checkedhover hue="55" partialhue="true" gump="9910" />
+			</radiobutton>
+			<label font="1" text="Vesper" hue="1" textalign="center" autosize="0" border="0">
+				<bounds x="295" y="130" width="67" height="17" />
+			</label>			
+			
+			<!-- Back Button -->
+			<imagebutton name="BackButton" unpressed="0x15a1" pressed="0x15a3" hover="0x15a2">
+				<position x="586" y="445" />
+			</imagebutton>
+			
+			<!-- Next Button -->
+			<imagebutton name="NextButton" unpressed="0x15a4" pressed="0x15a6" hover="0x15a5">
+				<position x="610" y="445" />
+			</imagebutton>
+		</children>	
+	</dialog>	
+	
+	<!-- Character Creation Error Dialog -->
+	<dialog id="CharacterCreationError" name="CharacterCreationError" closable="0" movable="true" visible="false">
+		<bounds x="195" y="115" width="250" height="250" />
+		<children>
+			<bordergump gump="9200">
+				<bounds x="0" y="0" width="250" height="250" />
+			</bordergump>
+			<bordergump gump="3500">
+				<bounds x="10" y="10" width="230" height="208" />
+			</bordergump>
+			<label name="MessageLabel" text="" hue="1" border="false" textalign="center" autosize="0">
+				<bounds x="25" y="25" width="200"/>
+			</label>
+			<imagebutton name="OkButton" unpressed="4023" pressed="4025" hover="4024">
+				<position x="110" y="223" />
+			</imagebutton>
+		</children>
+	</dialog>
+</dialogs>

@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Krrios File Formats</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#004B2C"><a href="index.html"><img src="top_logo.jpg" width="586" height="87" border="0"/></a></td>
+  </tr>
+  <tr>
+    <td height="3" bgcolor="#999999"><img src="spacer.gif" width="1" height="3" /></td>
+  </tr>
+</table>
+<div align="center">
+  <p> <span class="maintitle">Krrios File Format Reference </span></p>
+</div>
+<table width="740"  border="0" align="center" cellpadding="2" cellspacing="0" class="text">
+  <tr>
+    <td width="125" valign="top"><table width="125" border="0" cellspacing="0">
+      <tr>
+        <td><a href="colors.html" title="Colors">Colors</a></td>
+      </tr>
+      <tr>
+        <td><a href="index.html" title="Index">Index Files</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="animdata.html" title="Animdata">AnimData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">Art.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">ArtIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="fonts.html" title="Fonts">Fonts.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpArt.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td>Hues.mul</td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">Light.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">LightIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="maps.html" title="Maps">Map&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multimap.html" title="Multimap">MultiMap.rle</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="palette.html" title="Palette">Palette.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="radarcol.html" title="Radarcol">RadarCol.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sjis2uni.html" title="Sjis2uni">SJIS2Uni.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skillgroups.html" title="Skillgroups">SkillGrp.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">Sound.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">SoundIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="speech.html" title="Speech">Speech.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">StaIdx&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">Statics&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexMaps.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="tiledata.html" title="Tiledata">TileData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="unifont.html" title="Unifont">UniFont[n].mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="verdata.html" title="Verdata">VerData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="../index.html"> <br />
+Back to Reference</a> </td>
+      </tr>
+    </table>      </td>
+    <td width="607" valign="top"><table width="350" border="1" align="center" cellpadding="2" cellspacing="0">
+  <tr>
+    <td><h2 class="sectiontitle">Index</h2>
+      Index files are used to lookup data in other MUL files.<br />
+      <font face="Courier New">
+      <h4>Data:</h4>
+      <font color="MediumBlue">int</font> lookup;<br />
+      <font color="MediumBlue">int</font> length;<br />
+      <font color="MediumBlue">int</font> extra;<br />
+      <p></p>
+      </font>To find data for a certain entry, you seek to (EntryID * 12), and read the data.<br />
+Then, in the actual MUL file (not the index file), you seek to (lookup), and read (length) number of bytes.<br />
+Some data relies on the extra field.</td>
+  </tr>
+</table>
+<br />
+<table width="350" border="1" align="center" cellspacing="0">
+      <tr>
+        <td colspan="2" class="sectiontitle">Type definitions</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">char</font></td>
+        <td>Character 8-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">sbyte</font></td>
+        <td>Signed 8-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">byte</font></td>
+        <td>Unsigned 8-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">short</font></td>
+        <td>Signed 16-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">ushort</font></td>
+        <td>Unsigned 16-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">int</font></td>
+        <td>Signed 32-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">uint</font></td>
+        <td>Unsigned 32-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">long</font></td>
+        <td>Signed 64-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">ulong</font></td>
+        <td>Unsigned 64-bit</td>
+      </tr>
+      <tr>
+        <td><font color="MediumBlue">bool</font></td>
+        <td> Boolean 8-bit</td>
+      </tr>
+    </table>
+      <br />
+      <table width="350" border="1" align="center" cellspacing="0">
+        <tr>
+          <td height="24" colspan="2" class="sectiontitle">Definitions</td>
+        </tr>
+        <tr>
+          <td><a href="colors.html" title="Colors">Colors</a></td>
+          <td>Description of UO's 16-bit color values</td>
+        </tr>
+        <tr>
+          <td><a href="index.html" title="Index">Index Files</a></td>
+          <td>Format of the generic index file</td>
+        </tr>
+        <tr>
+          <td><a href="animations.html" title="Animations">Anim.mul</a></td>
+          <td>Animated character/equip graphics</td>
+        </tr>
+        <tr>
+          <td><a href="animations.html" title="Animations">Anim.idx</a></td>
+          <td>Index file for Anim.mul</td>
+        </tr>
+        <tr>
+          <td><a href="animdata.html" title="Animdata">AnimData.mul</a></td>
+          <td>Data for static animations</td>
+        </tr>
+        <tr>
+          <td><a href="art.html" title="Art">Art.mul</a></td>
+          <td>Land, static, and UO alpha graphics</td>
+        </tr>
+        <tr>
+          <td><a href="art.html" title="Art">ArtIdx.mul</a></td>
+          <td>Index file for Art.mul</td>
+        </tr>
+        <tr>
+          <td><a href="fonts.html" title="Fonts">Fonts.mul</a></td>
+          <td>Nine character sets</td>
+        </tr>
+        <tr>
+          <td><a href="gumps.html" title="Gumps">GumpArt.mul</a></td>
+          <td>Gump interface graphics</td>
+        </tr>
+        <tr>
+          <td><a href="gumps.html" title="Gumps">GumpIdx.mul</a></td>
+          <td>Index file for GumpArt.mul</td>
+        </tr>
+        <tr>
+          <td>Hues.mul</td>
+          <td>Hue coloring tables</td>
+        </tr>
+        <tr>
+          <td><a href="lights.html" title="Lights">Light.mul</a></td>
+          <td>Additive lightmap graphics</td>
+        </tr>
+        <tr>
+          <td><a href="lights.html" title="Lights">LightIdx.mul</a></td>
+          <td>Index file for Light.mul</td>
+        </tr>
+        <tr>
+          <td><a href="maps.html" title="Maps">Map&lt;n&gt;.mul</a></td>
+          <td>Land Matrix</td>
+        </tr>
+        <tr>
+          <td><a href="multimap.html" title="Multimap">MultiMap.rle</a></td>
+          <td>Overhead Map View</td>
+        </tr>
+        <tr>
+          <td><a href="multis.html" title="Multis">Multi.mul</a></td>
+          <td>Multi item lists</td>
+        </tr>
+        <tr>
+          <td><a href="multis.html" title="Multis">Multi.idx</a></td>
+          <td>Index file for Multi.mul</td>
+        </tr>
+        <tr>
+          <td><a href="palette.html" title="Palette">Palette.mul</a></td>
+          <td>24-bit RGB palette of unknown use</td>
+        </tr>
+        <tr>
+          <td><a href="radarcol.html" title="Radarcol">RadarCol.mul</a></td>
+          <td>Tile->Color table</td>
+        </tr>
+        <tr>
+          <td><a href="sjis2uni.html" title="Sjis2uni">SJIS2Uni.mul</a></td>
+          <td>Conversion table from SJIS to Unicode</td>
+        </tr>
+        <tr>
+          <td><a href="skillgroups.html" title="Skillgroups">SkillGrp.mul</a></td>
+          <td>Defines what skills are in which groups</td>
+        </tr>
+        <tr>
+          <td><a href="skills.html" title="Skills">Skills.mul</a></td>
+          <td>Skill table</td>
+        </tr>
+        <tr>
+          <td><a href="skills.html" title="Skills">Skills.idx</a></td>
+          <td>Index file for Skills.mul</td>
+        </tr>
+        <tr>
+          <td><a href="sounds.html" title="Sounds">Sound.mul</a></td>
+          <td>Sounds (PCM 22.050 kHz, 16-Bit Mono</td>
+        </tr>
+        <tr>
+          <td><a href="sounds.html" title="Sounds">SoundIdx.mul</a></td>
+          <td>Index file for Sound.mul</td>
+        </tr>
+        <tr>
+          <td><a href="speech.html" title="Speech">Speech.mul</a></td>
+          <td>Keyword/ID table</td>
+        </tr>
+        <tr>
+          <td><a href="statics.html" title="Statics">StaIdx&lt;n&gt;.mul</a></td>
+          <td>Index file for Statics<n>.mul</td>
+        </tr>
+        <tr>
+          <td><a href="statics.html" title="Statics">Statics&lt;n&gt;.mul</a></td>
+          <td>Static item lists</td>
+        </tr>
+        <tr>
+          <td><a href="textures.html" title="Textures">TexIdx.mul</a></td>
+          <td>Index file for TexMaps.mul</td>
+        </tr>
+        <tr>
+          <td><a href="textures.html" title="Textures">TexMaps.mul</a></td>
+          <td>Ground texture graphics</td>
+        </tr>
+        <tr>
+          <td><a href="tiledata.html" title="Tiledata">TileData.mul</a></td>
+          <td>Data about tiles (flags, properties, name)</td>
+        </tr>
+        <tr>
+          <td><a href="unifont.html" title="Unifont">UniFont[n].mul</a></td>
+          <td>Unicode character set</td>
+        </tr>
+        <tr>
+          <td><a href="verdata.html" title="Verdata">VerData.mul</a></td>
+          <td>Patch data</td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+ <br />
+</body>
+</html>

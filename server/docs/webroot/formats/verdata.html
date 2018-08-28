@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Krrios File Formats</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#004B2C"><a href="index.html"><img src="top_logo.jpg" width="586" height="87" border="0"/></a></td>
+  </tr>
+  <tr>
+    <td height="3" bgcolor="#999999"><img src="spacer.gif" width="1" height="3" /></td>
+  </tr>
+</table>
+<div align="center">
+  <p> <span class="maintitle">Krrios File Format Reference </span></p>
+</div>
+<table width="740"  border="0" align="center" cellpadding="2" cellspacing="0" class="text">
+  <tr>
+    <td width="125" valign="top"><table width="125" border="0" cellspacing="0">
+      <tr>
+        <td><a href="colors.html" title="Colors">Colors</a></td>
+      </tr>
+      <tr>
+        <td><a href="index.html" title="Index">Index Files</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="animdata.html" title="Animdata">AnimData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">Art.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">ArtIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="fonts.html" title="Fonts">Fonts.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpArt.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td>Hues.mul</td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">Light.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">LightIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="maps.html" title="Maps">Map&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multimap.html" title="Multimap">MultiMap.rle</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="palette.html" title="Palette">Palette.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="radarcol.html" title="Radarcol">RadarCol.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sjis2uni.html" title="Sjis2uni">SJIS2Uni.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skillgroups.html" title="Skillgroups">SkillGrp.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">Sound.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">SoundIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="speech.html" title="Speech">Speech.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">StaIdx&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">Statics&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexMaps.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="tiledata.html" title="Tiledata">TileData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="unifont.html" title="Unifont">UniFont[n].mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="verdata.html" title="Verdata">VerData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="../index.html"> <br />
+Back to Reference</a> </td>
+      </tr>
+    </table>      </td>
+    <td width="607" valign="top"><h2><a title="UniFont[n].mul" class="sectiontitle">Unicode Fonts</a></h2>
+      <p><b>Data File: </b>UniFont[n].mul<br />
+        <br />
+        This file begins with a lookup table:<br />
+        <br />
+        <font face="Courier New"><h4>Lookup Table:</h4></font></p>
+      <font color="MediumBlue" face="Courier New">int</font>[0x10000] lookupTable;<br />
+      <p></p>
+      You can then find the data by seeking to lookupTable[charID]<br />
+      <h4><font face="Courier New">Data:</font></h4>
+      <font color="MediumBlue" face="Courier New">byte</font> xOffset;<br />
+      <font color="MediumBlue" face="Courier New">byte</font> yOffset;<br />
+      <font color="MediumBlue" face="Courier New">byte</font> xWidth;<br />
+      <font color="MediumBlue" face="Courier New">byte</font> yHeight;<br />
+      <i><font face="Courier New">Scanline Data...</font></i>
+      <p></p>
+      Scanlines are padded on a byte-boundary; for each scanline, you will have ((xWidth - 1) / 8) + 1 bytes of data:<br />
+      <h4><font face="Courier New"><a title="8-bits">Scanline Byte</a>:</font></h4>
+      <table border="1">
+        <tr>
+          <td><font face="Courier New">7654321</font></td>
+          <td><font face="Courier New">0</font></td>
+        </tr>
+        <tr>
+          <td colspan="8"><font face="Courier New"><a title="Bitmask: 0xFF">8 pixels at 1-bpp</a></font></td>
+        </tr>
+      </table>
+      <p></p>
+      Bits are loaded high to low; bit 7 (mask: 0x80) would be the first pixel.<br />
+      If the bit value is 0, color is transparent, else, color is forecolor.<br />
+      <br />
+      <b>See Also:</b><br />
+&nbsp;-&nbsp;<a href="sjis2uni.html" title="Sjis2uni">SJIS To UniFont Table</a></td>
+  </tr>
+</table>
+<br />
+</body>
+</html>

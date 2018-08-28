@@ -1,0 +1,58 @@
+01:09: WARNING: Couldn't find Language File: wolfpack_pt_BR.qm
+01:09: WARNING: Couldn't find Language File: wolfpack_pt_BR.qm
+01:09: WARNING: Couldn't find Language File: wolfpack_pt_BR.qm
+01:12: WARNING: Couldn't find Language File: wolfpack_pt_BR.qm
+01:12: WARNING: Unable to find the files for map 0.
+01:12: WARNING: Unable to find the files for map 1.
+01:12: WARNING: Unable to find the files for map 2.
+01:12: WARNING: Unable to find the files for map 3.
+01:12: WARNING: Unable to find the files for map 4.
+01:12: ERROR: Error opening file ./muls/tiledata.mul for reading.
+01:32: WARNING: Couldn't find Language File: wolfpack_pt_BR.qm
+01:32: The world loaded in 0 ms.
+01:32: Starting remote admin on port 2594.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_11.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_13.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_14.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_17.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_2.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_31.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_33.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_4.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_6.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_7.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_bucs_vendor_6.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_delucia_vendor_1.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_delucia_vendor_3.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_delucia_vendor_6.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_delucia_vendor_7.
+01:33: WARNING: Unable to find valid spot for spawnregion Felucca_delucia_vendor_8.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_10.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_11.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_14.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_15.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_17.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_18.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_19.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_4.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_5.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_6.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_7.
+01:33: WARNING: Unable to find valid spot for spawnregion Zento_vendor_8.
+01:33: ERROR: An error occured in "equipment": KeyboardInterrupt
+01:33: PYTHON: KeyboardInterrupt: 
+01:33: PYTHON: File '/home/mnunes/Wolfpack/server/release/scripts/equipment.py',812 in 'onDelete'
+01:33: WARNING: Unable to find valid spot for spawnregion britain_vendor_11.
+01:33: WARNING: Unable to find valid spot for spawnregion britain_vendor_13.
+01:33: WARNING: Unable to find valid spot for spawnregion britain_vendor_14.
+01:33: WARNING: Unable to find valid spot for spawnregion britain_vendor_17.
+01:33: WARNING: Unable to find valid spot for spawnregion britain_vendor_2.
+01:33: Stopping remote admin.
+01:39: WARNING: Couldn't find Language File: wolfpack_pt_BR.qm
+01:39: The world loaded in 0 ms.
+01:39: Starting remote admin on port 2594.
+01:39: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_11.
+01:39: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_13.
+01:39: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_14.
+01:39: WARNING: Unable to find valid spot for spawnregion Felucca_britain_vendor_17.
+01:39: Stopping remote admin.

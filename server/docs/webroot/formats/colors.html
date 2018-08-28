@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Krrios File Formats</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#004B2C"><a href="index.html"><img src="top_logo.jpg" width="586" height="87" border="0"/></a></td>
+  </tr>
+  <tr>
+    <td height="3" bgcolor="#999999"><img src="spacer.gif" width="1" height="3" /></td>
+  </tr>
+</table>
+<div align="center">
+  <p> <span class="maintitle">Krrios File Format Reference </span></p>
+</div>
+<table width="740"  border="0" align="center" cellpadding="2" cellspacing="0" class="text">
+  <tr>
+    <td width="125" valign="top"><table width="125" border="0" cellspacing="0">
+      <tr>
+        <td><a href="colors.html" title="Colors">Colors</a></td>
+      </tr>
+      <tr>
+        <td><a href="index.html" title="Index">Index Files</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="animdata.html" title="Animdata">AnimData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">Art.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">ArtIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="fonts.html" title="Fonts">Fonts.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpArt.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td>Hues.mul</td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">Light.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">LightIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="maps.html" title="Maps">Map&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multimap.html" title="Multimap">MultiMap.rle</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="palette.html" title="Palette">Palette.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="radarcol.html" title="Radarcol">RadarCol.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sjis2uni.html" title="Sjis2uni">SJIS2Uni.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skillgroups.html" title="Skillgroups">SkillGrp.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">Sound.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">SoundIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="speech.html" title="Speech">Speech.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">StaIdx&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">Statics&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexMaps.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="tiledata.html" title="Tiledata">TileData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="unifont.html" title="Unifont">UniFont[n].mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="verdata.html" title="Verdata">VerData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="../index.html"> <br />
+Back to Reference</a> </td>
+      </tr>
+    </table>      </td>
+    <td width="607" valign="top"><h2 class="sectiontitle">UO Colors</h2>
+      UO's graphics are all 16-bit 555 color:<br />
+      <h4><font face="Courier New">Data:</font></h4>
+      <font color="MediumBlue" face="Courier New">short</font> color;<br />
+      <p></p>
+      <h4><a title="16-bits">Color Bit Masks</a>:</h4>
+      <table border="1">
+        <tr>
+          <td>F</td>
+          <td>E</td>
+          <td>D</td>
+          <td>C</td>
+          <td>B</td>
+          <td>A</td>
+          <td>9</td>
+          <td>8</td>
+          <td>7</td>
+          <td>6</td>
+          <td>5</td>
+          <td>4</td>
+          <td>3</td>
+          <td>2</td>
+          <td>1</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td colspan="1"><a title="Bitmask: 0x8000"> </a></td>
+          <td colspan="5" bgcolor="#C80000"><font color="#FFFFFF"><a title="Bitmask: 0x7C00">Red</a></font></td>
+          <td colspan="5" bgcolor="#00C800"><font color="#FFFFFF"><a title="Bitmask: 0x3E0">Green</a></font></td>
+          <td colspan="5" bgcolor="#0000C8"><font color="#FFFFFF"><a title="Bitmask: 0x1F">Blue</a></font></td>
+        </tr>
+      </table>
+      <p></p>
+      Bit 15 is normally used for transparency, but doesn't appear to be so in UO.<br />
+      <h2>&nbsp; </h2>
+      <h2><br />
+      </h2></td>
+  </tr>
+</table>
+<br />
+</body>
+</html>

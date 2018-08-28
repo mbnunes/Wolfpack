@@ -1,0 +1,164 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+<dialogs>
+	<!-- Small Player Status Dialog -->
+	<dialog class="statuswindow" id="SmallPlayerStatus" name="SmallPlayerStatus" closable="true" movable="true" module="dialogs.Status" smallstatus="true">
+		<bounds x="0" y="0" width="154" height="60" />
+		
+		<children>
+			<!-- This background gump has to be changed to 2055 based on the warmode of the player -->
+			<gumpimage name="Background" gump="2051" movehandle="true" />
+			
+			<!-- These are the bar backgrounds -->
+			<gumpimage gump="2053" movehandle="true">
+				<position x="33" y="11" />
+			</gumpimage>
+			<gumpimage gump="2053" movehandle="true">
+				<position x="33" y="24" />
+			</gumpimage>
+			<gumpimage gump="2053" movehandle="true">
+				<position x="33" y="37" />
+			</gumpimage>
+			
+			<!-- These are the bar foregrounds -->
+			<tiledgump name="HealthBar" gump="2054" movehandle="true">
+				<bounds x="33" y="11" width="109" height="11" />
+				<tag name="maxwidth" value="109" />
+			</tiledgump>
+			<tiledgump name="ManaBar" gump="2054" movehandle="true">
+				<bounds x="33" y="24" width="109" height="11" />
+				<tag name="maxwidth" value="109" />
+			</tiledgump>
+			<tiledgump name="StaminaBar" gump="2054" movehandle="true">
+				<bounds x="33" y="37" width="109" height="11" />
+				<tag name="maxwidth" value="109" />
+			</tiledgump>				
+		</children>			
+	</dialog>
+
+	<!-- Big Status Dialog -->
+	<dialog class="statuswindow" id="PlayerStatusAos" name="PlayerStatus" closable="true" movable="true" module="dialogs.Status">
+		<bounds x="0" y="0" width="427" height="184" />
+	
+		<!-- <tag name="Aos" value="1" />  --> <!-- Flag it as the Aos Status -->
+		
+		<children>
+			<!-- Background -->
+			<gumpimage gump="10860" movehandle="true"/>
+			
+			<!-- Statlock Buttons
+			Note on these:
+			The UP button has the ids: 0x983 (normal) 0x984 (hover)
+			The DOWN button has the ids: 0x985 (normal) 0x986 (hover)
+			The LOCK button has the ids: 0x82c (all)			
+			-->
+			<imagebutton name="StrengthLock" unpressed="0x983" pressed="0x984" hover="0x984" visible="false" focusable="false">
+				<position x="40" y="78" />
+			</imagebutton>
+			
+			<imagebutton name="DexterityLock" unpressed="0x983" pressed="0x984" hover="0x984" visible="false" focusable="false">
+				<position x="40" y="105" />
+			</imagebutton>
+			
+			<imagebutton name="IntelligenceLock" unpressed="0x983" pressed="0x984" hover="0x984" visible="false" focusable="false">
+				<position x="40" y="133" />
+			</imagebutton>
+			
+			<!-- There is a clickable area at the following location that should close the current gump
+			and show the small status gump instead 
+			x: 385 y: 146 width: 23 height: 22
+			-->
+			
+			<!-- Strength, Dexterity, Intelligence Labels -->
+			<asciilabel movehandle="true" hue="0x386" font="1" name="StrengthLabel">
+				<position x="88" y="77" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="DexterityLabel">
+				<position x="88" y="105" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="IntelligenceLabel">
+				<position x="88" y="133" />
+			</asciilabel>
+			
+			<!-- Health, Stamina, Mana Labels -->
+			<asciilabel movehandle="true" hue="0x386" font="1" name="HealthLabel" textalign="center" autosize="0">
+				<bounds x="148" y="70" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" text="___" textalign="center" autosize="0">
+				<bounds x="148" y="73" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="MaxHealthLabel" textalign="center" autosize="0">
+				<bounds x="148" y="83" width="30" />
+			</asciilabel>			
+
+			<asciilabel movehandle="true" hue="0x386" font="1" name="StaminaLabel" textalign="center" autosize="0">
+				<bounds x="148" y="98" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" text="___" textalign="center" autosize="0">
+				<bounds x="148" y="101" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="MaxStaminaLabel" textalign="center" autosize="0">
+				<bounds x="148" y="111" width="30" />
+			</asciilabel>
+			
+			<asciilabel movehandle="true" hue="0x386" font="1" name="ManaLabel" textalign="center" autosize="0">
+				<bounds x="148" y="126" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" text="___" textalign="center" autosize="0">
+				<bounds x="148" y="129" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="MaxManaLabel" textalign="center" autosize="0">
+				<bounds x="148" y="139" width="30" />
+			</asciilabel>			
+
+			<!-- Stats Cap, Luck, Weight -->
+			<asciilabel movehandle="true" hue="0x386" font="1" name="StatsCapLabel">
+				<position x="220" y="77" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="LuckLabel">
+				<position x="220" y="105" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="WeightLabel" textalign="center" autosize="0">
+				<bounds x="217" y="126" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" text="___" textalign="center" autosize="0">
+				<bounds x="217" y="129" width="30" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="MaxWeightLabel" textalign="center" autosize="0">
+				<bounds x="217" y="139" width="30" />
+			</asciilabel>
+			
+			<!-- Min-Maxdamage, Gold, Followers/MaxFollowers -->
+			<asciilabel movehandle="true" hue="0x386" font="1" name="DamageLabel">
+				<position x="280" y="77" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="GoldLabel">
+				<position x="280" y="105" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="FollowersLabel">
+				<position x="285" y="133" />
+			</asciilabel>
+			
+			<!-- Resistances -->
+			<asciilabel movehandle="true" hue="0x386" font="1" name="PhysicalResistLabel">
+				<position x="355" y="74" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="FireResistLabel">
+				<position x="355" y="91" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="ColdResistLabel">
+				<position x="355" y="106" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="PoisonResistLabel">
+				<position x="355" y="121" />
+			</asciilabel>
+			<asciilabel movehandle="true" hue="0x386" font="1" name="EnergyResistLabel">
+				<position x="355" y="136" />
+			</asciilabel>
+			
+			<!-- Player Name -->
+			<asciilabel movehandle="true" hue="0x386" font="1" name="NameLabel" textalign="center" autosize="0">
+				<bounds x="39" y="49" width="353" height="18" />
+			</asciilabel>
+		</children>
+	</dialog>
+</dialogs>

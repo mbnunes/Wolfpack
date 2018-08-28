@@ -1,0 +1,26 @@
+
+1. Please download Qt 4.4
+
+1.1. Download from Trolltech
+http://www.trolltech.com
+This is appropiate if you are not on the Windows platform or if you are using MinGW on windows.
+
+1.2. Download precompiled for Microsoft Visual Studio
+If you are using Microsoft Visual Studio (Or the Intel compiler) and find compiling Qt
+yourself tiresome, you can download a precompiled version of Qt 4.4 for Visual Studio here:
+http://pallas.copai.de/index.php?option=com_content&view=article&id=49&Itemid=58
+
+2. Download Python 2.5 from http://www.python.org (Not neccessary if your system already
+includes the Python 2.5 libraries). If you want to compile the client in debug mode, you 
+will need to build Python yourself. Please follow their build instructions for this. If you
+only want to build the release version, the Python 2.5 Windows installer includes a precompiled
+python25.lib for you.
+
+4. Compile the client
+
+4.1 Using Visual Studio
+Run "qmake -tp vc" in the client directory and open the resulting uoclient.vcproj file with your IDE.
+
+4.2 Using QMake
+Run "qmake" in the client directory and run either "nmake" to build everything or any other appropiate
+build command for your platform (i.e. "make" on Linux).

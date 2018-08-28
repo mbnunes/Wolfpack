@@ -1,0 +1,221 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Krrios File Formats</title>
+<style type="text/css">
+<!--
+body {
+	background-color: #FFFFFF;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+-->
+</style>
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<table width="100%"  border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td bgcolor="#004B2C"><a href="index.html"><img src="top_logo.jpg" width="586" height="87" border="0"/></a></td>
+  </tr>
+  <tr>
+    <td height="3" bgcolor="#999999"><img src="spacer.gif" width="1" height="3" /></td>
+  </tr>
+</table>
+<div align="center">
+  <p> <span class="maintitle">Krrios File Format Reference </span></p>
+</div>
+<table width="740"  border="0" align="center" cellpadding="2" cellspacing="0" class="text">
+  <tr>
+    <td width="125" valign="top"><table width="125" border="0" cellspacing="0">
+      <tr>
+        <td><a href="colors.html" title="Colors">Colors</a></td>
+      </tr>
+      <tr>
+        <td><a href="index.html" title="Index">Index Files</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="animations.html" title="Animations">Anim.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="animdata.html" title="Animdata">AnimData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">Art.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="art.html" title="Art">ArtIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="fonts.html" title="Fonts">Fonts.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpArt.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="gumps.html" title="Gumps">GumpIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td>Hues.mul</td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">Light.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="lights.html" title="Lights">LightIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="maps.html" title="Maps">Map&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multimap.html" title="Multimap">MultiMap.rle</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="multis.html" title="Multis">Multi.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="palette.html" title="Palette">Palette.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="radarcol.html" title="Radarcol">RadarCol.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sjis2uni.html" title="Sjis2uni">SJIS2Uni.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skillgroups.html" title="Skillgroups">SkillGrp.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="skills.html" title="Skills">Skills.idx</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">Sound.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="sounds.html" title="Sounds">SoundIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="speech.html" title="Speech">Speech.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">StaIdx&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="statics.html" title="Statics">Statics&lt;n&gt;.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexIdx.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="textures.html" title="Textures">TexMaps.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="tiledata.html" title="Tiledata">TileData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="unifont.html" title="Unifont">UniFont[n].mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="verdata.html" title="Verdata">VerData.mul</a></td>
+      </tr>
+      <tr>
+        <td><a href="../index.html"> <br />
+Back to Reference</a> </td>
+      </tr>
+    </table>      </td>
+    <td width="607" valign="top"><h2><a title="Anim.mul, Anim.idx" class="sectiontitle">Animations</a></h2>
+      <p><b>Data File: </b>Anim.mul<br />
+          <b>Index File: </b>Anim.idx<br />
+      </p>
+      <h4><font face="Courier New">Data:</font></h4>
+      <font color="MediumBlue" face="Courier New">short</font>[0x100] palette;<br />
+      <font color="MediumBlue" face="Courier New">int</font> frameCount;<br />
+      <font color="MediumBlue" face="Courier New">int</font>[frameCount] lookupTable;<br />
+      <i><font face="Courier New">Frame Data...</font></i>
+      <p></p>
+      To find the data for a frame, seek to 0x200 + lookupTable[frame].<br />
+      <h4><font face="Courier New">Frame Data:</font></h4>
+      <font color="MediumBlue" face="Courier New">short</font> centerX;<br />
+      <font color="MediumBlue" face="Courier New">short</font> centerY;<br />
+      <font color="MediumBlue" face="Courier New">short</font> width;<br />
+      <font color="MediumBlue" face="Courier New">short</font> height;<br />
+      <i><font face="Courier New">Pixel Data...</font></i>
+      <p></p>
+      Pixel data comes in chunks. If the current chunk header is 0x7FFF7FFF, the image is completed.<br />
+      <h4><font face="Courier New">Chunks:</font></h4>
+      <font color="MediumBlue" face="Courier New">int</font> header;<br />
+      <font color="MediumBlue" face="Courier New">byte</font>[XRun] palettePixels; <font color="DarkGreen" face="Courier New">// See description below for XRun</font><br />
+      <p></p>
+      <h4><a title="32-bits">Header Bit Masks</a>:</h4>
+      <table border="1">
+        <tr>
+          <td>1F</td>
+          <td>1E</td>
+          <td>1D</td>
+          <td>1C</td>
+          <td>1B</td>
+          <td>1A</td>
+          <td>19</td>
+          <td>18</td>
+          <td>17</td>
+          <td>16</td>
+          <td>15</td>
+          <td>14</td>
+          <td>13</td>
+          <td>12</td>
+          <td>11</td>
+          <td>10</td>
+          <td>0F</td>
+          <td>0E</td>
+          <td>0D</td>
+          <td>0C</td>
+          <td>0B</td>
+          <td>0A</td>
+          <td>09</td>
+          <td>08</td>
+          <td>07</td>
+          <td>06</td>
+          <td>05</td>
+          <td>04</td>
+          <td>03</td>
+          <td>02</td>
+          <td>01</td>
+          <td>00</td>
+        </tr>
+        <tr>
+          <td colspan="10"><a title="Bitmask: 0xFFC00000">YOffset</a></td>
+          <td colspan="10"><a title="Bitmask: 0x3FF000">XOffset</a></td>
+          <td colspan="12"><a title="Bitmask: 0xFFF">XRun</a></td>
+        </tr>
+      </table>
+      <p></p>
+      XOffset and YOffset are relative to centerX and centerY.<br />
+      XRun indicates how many pixels are contained in this line.<br />
+      XOffset and YOffset are signed, so we need to compensate for that:<br />
+      <font face="Courier New">XOffset = (XOffset ^ 0x200) - 0x200</font><br />
+      <font face="Courier New">YOffset = (YOffset ^ 0x200) - 0x200</font><br />
+      <br />
+      <b>See Also:</b><br />
+&nbsp;-&nbsp;<a href="colors.html" title="Colors">UO Color Format</a><br />
+&nbsp;-&nbsp;<a href="index.html" title="Index">Index Files</a><br />
+<h2>&nbsp; </h2>
+<h2><br />
+      </h2></td>
+  </tr>
+</table>
+<br />
+</body>
+</html>
